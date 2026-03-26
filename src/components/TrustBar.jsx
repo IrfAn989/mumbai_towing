@@ -1,5 +1,4 @@
-import { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { useRef, useEffect, useState } from 'react';
 import { useCountUp } from '../hooks/useCountUp';
 import { Truck, Clock, Star, MapPin } from 'lucide-react';
 
@@ -15,27 +14,30 @@ function StatCard({ icon: Icon, value, suffix, label, color, isFloat, started })
   const display = isFloat ? (count / 10).toFixed(1) : count;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="flex flex-col items-center text-center px-6 py-2"
-    >
-      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-3 bg-gray-50`}>
+    <div className="flex flex-col items-center text-center px-6 py-2">
+      <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-3 bg-gray-50">
         <Icon size={24} className={color} />
       </div>
       <div className={`text-3xl lg:text-4xl font-extrabold ${color} tabular-nums`}>
         {display}{suffix}
       </div>
       <div className="text-sm text-gray-600 font-medium mt-1">{label}</div>
-    </motion.div>
+    </div>
   );
 }
 
 export default function TrustBar() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-80px' });
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setInView(true); },
+      { rootMargin: '-80px', threshold: 0 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section ref={ref} className="bg-white border-y border-gray-100 py-10">

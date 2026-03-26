@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Phone, Menu, X, Truck } from 'lucide-react';
 
 const PHONE = '+919820207025';
@@ -32,10 +31,7 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.header
-        initial={{ y: -80, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
+      <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
         }`}
@@ -90,15 +86,8 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        <AnimatePresence>
-          {menuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.25 }}
-              className="lg:hidden bg-white border-t border-gray-100 overflow-hidden"
-            >
+        {menuOpen && (
+          <div className="lg:hidden bg-white border-t border-gray-100 animate-slideDown">
               <div className="px-4 py-4 space-y-1">
                 {navLinks.map((link) => (
                   <a
@@ -121,10 +110,9 @@ export default function Navbar() {
                   </a>
                 </div>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.header>
+          </div>
+        )}
+      </header>
 
       {/* Spacer */}
       <div className="h-16 lg:h-20" />
