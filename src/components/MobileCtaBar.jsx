@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { Phone, MessageCircle } from 'lucide-react';
 
 const PHONE = '+919820207025';
@@ -6,12 +5,7 @@ const WHATSAPP = 'https://wa.me/919820207025?text=Hi%2C%20I%20need%20towing%20se
 
 export default function MobileCtaBar() {
   return (
-    <motion.div
-      initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 1.2, duration: 0.4, ease: 'easeOut' }}
-      className="fixed bottom-0 left-0 right-0 z-50 lg:hidden"
-    >
+    <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden">
       <div className="bg-white border-t border-gray-200 shadow-2xl px-4 py-3 safe-area-bottom">
         <div className="flex gap-3 max-w-lg mx-auto">
           <a
@@ -34,6 +28,6 @@ export default function MobileCtaBar() {
           </a>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

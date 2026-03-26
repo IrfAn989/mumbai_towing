@@ -6,24 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f97316" />
     
-    <!-- Critical CSS for above-the-fold content - improves FCP -->
+    <!-- Critical inline CSS - no external fonts, no render blocking -->
     <style>
-      *,::after,::before{box-sizing:border-box;border:0 solid #e5e7eb}
-      html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
-      body{margin:0;line-height:inherit;background-color:#fff}
+      *,::after,::before{box-sizing:border-box}
+      html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:16px}
+      body{margin:0;background:#fff;color:#111}
       #root{min-height:100vh}
-      .hero-skeleton{min-height:calc(100vh - 64px);background:#0F172A;display:flex;align-items:center;justify-content:center}
-      .nav-skeleton{height:64px;background:#fff;position:fixed;top:0;left:0;right:0;z-index:50}
+      /* Static skeleton styles */
+      ._nav{position:fixed;top:0;left:0;right:0;height:64px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08);z-index:50;display:flex;align-items:center;padding:0 16px;justify-content:space-between}
+      ._logo{display:flex;align-items:center;gap:8px;font-weight:700;font-size:18px;color:#111;text-decoration:none}
+      ._logo-icon{width:36px;height:36px;background:#f97316;border-radius:8px;display:flex;align-items:center;justify-content:center}
+      ._call-btn{background:#f97316;color:#fff;border:none;border-radius:20px;padding:10px 20px;font-weight:600;font-size:14px;cursor:pointer;text-decoration:none;display:none}
+      @media(min-width:1024px){._call-btn{display:flex;align-items:center;gap:6px}}
+      ._hero{min-height:calc(100vh - 64px);background:#0F172A;margin-top:64px;display:flex;align-items:center;padding:64px 16px}
+      ._hero-inner{max-width:560px}
+      ._badge{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;padding:6px 14px;border-radius:20px;border:1px solid rgba(249,115,22,0.3);background:rgba(249,115,22,0.15);color:#fb923c;margin-bottom:20px}
+      ._dot{width:6px;height:6px;border-radius:50%;background:#f97316}
+      ._h1{font-size:clamp(2.2rem,8vw,3.5rem);font-weight:900;color:#fff;line-height:1.05;margin:0 0 16px}
+      ._h1 span{color:#f97316;display:block}
+      ._sub{color:#94a3b8;font-size:17px;line-height:1.6;margin:0 0 28px;max-width:480px}
+      ._btns{display:flex;flex-direction:column;gap:12px}
+      @media(min-width:640px){._btns{flex-direction:row}}
+      ._btn-call{display:flex;align-items:center;justify-content:center;gap:8px;background:#f97316;color:#fff;font-weight:700;font-size:16px;padding:16px 28px;border-radius:16px;text-decoration:none;border:none}
+      ._btn-wa{display:flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:#fff;font-weight:700;font-size:16px;padding:16px 28px;border-radius:16px;text-decoration:none;border:2px solid rgba(255,255,255,0.2)}
+      ._trust{display:flex;flex-wrap:wrap;gap:16px;margin-top:20px;color:#94a3b8;font-size:14px;font-weight:600}
+      ._mobile-bar{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:10px 12px;display:flex;gap:8px;z-index:40;box-shadow:0 -2px 8px rgba(0,0,0,.1)}
+      @media(min-width:1024px){._mobile-bar{display:none}}
+      ._m-call{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:#f97316;color:#fff;font-weight:700;font-size:14px;padding:14px;border-radius:12px;text-decoration:none}
+      ._m-wa{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:#111;color:#fff;font-weight:700;font-size:14px;padding:14px;border-radius:12px;text-decoration:none}
     </style>
-    
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Load Inter font - only essential weights for faster load -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" />
-    </noscript>
 
     <!-- Primary SEO -->
     <title>Mumbai Towing 24/7 | Car Towing Service in Mumbai – Fast & Affordable</title>
@@ -87,7 +98,53 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Static HTML skeleton: renders instantly before JS loads, React replaces it -->
+    <div id="root">
+      <nav class="_nav">
+        <a href="#" class="_logo">
+          <div class="_logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          mumbaitowing<span style="color:#f97316">24</span>
+        </a>
+        <a href="tel:+919820207025" class="_call-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.12 2.23 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+      </nav>
+      <section class="_hero">
+        <div class="_hero-inner">
+          <div class="_badge"><span class="_dot"></span> Available Now — Mumbai Wide</div>
+          <h1 class="_h1">24/7 Emergency<span>Towing in Mumbai</span></h1>
+          <p class="_sub">Breakdown anywhere in Mumbai? We dispatch immediately and reach you in under 30 minutes — day or night.</p>
+          <div class="_btns">
+            <a href="tel:+919820207025" class="_btn-call">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.12 2.23 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              Call Now — Free
+            </a>
+            <a href="https://wa.me/919820207025" class="_btn-wa">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp Us
+            </a>
+          </div>
+          <div class="_trust">
+            <span>✓ 1000+ Tows Done</span>
+            <span>✓ Fully Insured</span>
+            <span>✓ 24/7 Active</span>
+          </div>
+        </div>
+      </section>
+      <div class="_mobile-bar">
+        <a href="tel:+919820207025" class="_m-call">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.12 2.23 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="https://wa.me/919820207025" class="_m-wa">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

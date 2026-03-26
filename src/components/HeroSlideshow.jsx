@@ -72,35 +72,19 @@ function getIllustration(type) {
 
 export default function HeroSlideshow() {
   const [current, setCurrent] = useState(0);
-  const [direction, setDirection] = useState(1);
-  const [progress, setProgress] = useState(0);
 
-  const goTo = useCallback((index, dir) => {
-    setDirection(dir);
+  const goTo = useCallback((index) => {
     setCurrent(index);
-    setProgress(0);
   }, []);
 
-  const next = useCallback(() => goTo((current + 1) % slides.length, 1), [current, goTo]);
-  const prev = useCallback(() => goTo((current - 1 + slides.length) % slides.length, -1), [current, goTo]);
+  const next = useCallback(() => setCurrent(c => (c + 1) % slides.length), []);
+  const prev = useCallback(() => setCurrent(c => (c - 1 + slides.length) % slides.length), []);
 
-  // Auto-advance + progress bar
+  // Use setInterval instead of RAF - much lighter on main thread
   useEffect(() => {
-    let start = null;
-    let frame;
-    const step = (ts) => {
-      if (!start) start = ts;
-      const elapsed = ts - start;
-      setProgress(Math.min((elapsed / INTERVAL) * 100, 100));
-      if (elapsed < INTERVAL) {
-        frame = requestAnimationFrame(step);
-      } else {
-        next();
-      }
-    };
-    frame = requestAnimationFrame(step);
-    return () => cancelAnimationFrame(frame);
-  }, [current, next]);
+    const id = setInterval(next, INTERVAL);
+    return () => clearInterval(id);
+  }, [next]);
 
   const slide = slides[current];
   const isOrange = slide.theme === 'orange';
@@ -206,7 +190,7 @@ export default function HeroSlideshow() {
             {slides.map((_, i) => (
               <button
                 key={i}
-                onClick={() => goTo(i, i > current ? 1 : -1)}
+                onClick={() => goTo(i)}
                 className="relative h-8 min-w-[44px] flex items-center justify-center rounded-full overflow-hidden transition-all duration-300"
                 aria-label={`Go to slide ${i + 1} of ${slides.length}: ${slides[i].headline.join(' ')}`}
               >
