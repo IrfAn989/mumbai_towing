@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import Navbar from './components/Navbar'
 import HeroSlideshow from './components/HeroSlideshow'
 import TrustBar from './components/TrustBar'
@@ -30,6 +31,7 @@ function App() {
       <Footer />
       <MobileCtaBar />
       <PopupCTA />
+      <SpeedInsights />
     </div>
   )
 }
