@@ -9,8 +9,7 @@ export default function PopupCTA() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Delay popup to avoid affecting Lighthouse performance metrics
-    const timer = setTimeout(() => setIsOpen(true), 15000);
+    const timer = setTimeout(() => setIsOpen(true), 2000);
     return () => clearTimeout(timer);
   }, []);
 
