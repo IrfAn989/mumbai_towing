@@ -152,25 +152,27 @@ export default function HeroSlideshow() {
                 </motion.div>
 
                 {/* Headline */}
-                <div className="space-y-1">
+                <motion.h1
+                  custom={1}
+                  variants={textVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="space-y-1"
+                >
                   {slide.headline.map((line, i) => (
-                    <motion.h1
+                    <span
                       key={`${current}-${i}`}
-                      custom={i + 1}
-                      variants={textVariants}
-                      initial="hidden"
-                      animate="visible"
-                      exit="exit"
-                      className={`text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-none ${
+                      className={`block text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-none ${
                         i === 0
                           ? (isOrange ? 'text-white' : 'text-white')
                           : slide.accentClass
                       }`}
                     >
                       {line}
-                    </motion.h1>
+                    </span>
                   ))}
-                </div>
+                </motion.h1>
 
                 {/* Sub */}
                 <motion.p
@@ -179,7 +181,7 @@ export default function HeroSlideshow() {
                   initial="hidden"
                   animate="visible"
                   exit="exit"
-                  className={`text-base sm:text-lg leading-relaxed max-w-lg ${isOrange ? 'text-orange-100' : 'text-slate-400'}`}
+                  className={`text-base sm:text-lg leading-relaxed max-w-lg ${isOrange ? 'text-white/90' : 'text-slate-300'}`}
                 >
                   {slide.sub}
                 </motion.p>
@@ -217,7 +219,7 @@ export default function HeroSlideshow() {
                 <motion.div custom={5} variants={textVariants} initial="hidden" animate="visible" exit="exit"
                   className="flex flex-wrap gap-4 pt-1">
                   {['1000+ Tows Done', 'Fully Insured', '24/7 Active'].map((t) => (
-                    <span key={t} className={`text-xs font-semibold ${isOrange ? 'text-orange-100' : 'text-slate-400'}`}>
+                    <span key={t} className={`text-sm font-semibold ${isOrange ? 'text-white/90' : 'text-slate-300'}`}>
                       ✓ {t}
                     </span>
                   ))}
@@ -251,16 +253,20 @@ export default function HeroSlideshow() {
               <button
                 key={i}
                 onClick={() => goTo(i, i > current ? 1 : -1)}
-                className="relative h-1.5 rounded-full overflow-hidden transition-all duration-300"
-                style={{ width: i === current ? 40 : 14, background: 'rgba(255,255,255,0.25)' }}
-                aria-label={`Slide ${i + 1}`}
+                className="relative h-8 min-w-[44px] flex items-center justify-center rounded-full overflow-hidden transition-all duration-300"
+                aria-label={`Go to slide ${i + 1} of ${slides.length}: ${slides[i].headline.join(' ')}`}
               >
+                <span 
+                  className="h-2 rounded-full transition-all duration-300"
+                  style={{ width: i === current ? 40 : 14, background: i === current ? '#f97316' : 'rgba(255,255,255,0.4)' }}
+                >
                 {i === current && (
-                  <motion.div
-                    className="absolute inset-y-0 left-0 bg-orange-400 rounded-full"
-                    style={{ width: `${progress}%` }}
-                  />
-                )}
+                    <motion.div
+                      className="absolute inset-y-0 left-0 bg-orange-500 rounded-full"
+                      style={{ width: `${progress}%` }}
+                    />
+                  )}
+                </span>
               </button>
             ))}
           </div>
@@ -272,17 +278,17 @@ export default function HeroSlideshow() {
             </span>
             <button
               onClick={prev}
-              className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center text-white transition-all"
-              aria-label="Previous slide"
+              className="w-11 h-11 rounded-full bg-white/15 hover:bg-white/25 border border-white/30 flex items-center justify-center text-white transition-all"
+              aria-label="Go to previous slide"
             >
-              <ChevronLeft size={16} />
+              <ChevronLeft size={20} aria-hidden="true" />
             </button>
             <button
               onClick={next}
-              className="w-9 h-9 rounded-full bg-orange-500 hover:bg-orange-600 flex items-center justify-center text-white transition-all"
-              aria-label="Next slide"
+              className="w-11 h-11 rounded-full bg-orange-500 hover:bg-orange-600 flex items-center justify-center text-white transition-all"
+              aria-label="Go to next slide"
             >
-              <ChevronRight size={16} />
+              <ChevronRight size={20} aria-hidden="true" />
             </button>
           </div>
         </div>

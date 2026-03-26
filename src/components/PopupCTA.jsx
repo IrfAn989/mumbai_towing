@@ -42,10 +42,10 @@ export default function PopupCTA() {
                 {/* Close */}
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="absolute top-3.5 right-3.5 w-8 h-8 bg-white/20 hover:bg-white/35 rounded-full flex items-center justify-center text-white transition-colors"
-                  aria-label="Close"
+                  className="absolute top-3.5 right-3.5 w-11 h-11 bg-white/25 hover:bg-white/40 rounded-full flex items-center justify-center text-white transition-colors"
+                  aria-label="Close popup dialog"
                 >
-                  <X size={15} />
+                  <X size={18} aria-hidden="true" />
                 </button>
 
                 {/* Live badge */}
@@ -121,16 +121,16 @@ export default function PopupCTA() {
                 </motion.a>
 
                 {/* Trust row */}
-                <div className="flex items-center justify-center gap-4 pt-1">
-                  <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                <div className="flex items-center justify-center gap-6 pt-2">
+                  <div className="flex items-center gap-1.5 text-sm text-gray-600">
                     <Shield size={12} className="text-orange-500" />
                     Insured
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                  <div className="flex items-center gap-1.5 text-sm text-gray-600">
                     <Clock size={12} className="text-orange-500" />
                     ~30 min
                   </div>
-                  <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                  <div className="flex items-center gap-1.5 text-sm text-gray-600">
                     <span className="text-orange-500">★</span>
                     4.9 rated
                   </div>
@@ -138,7 +138,8 @@ export default function PopupCTA() {
 
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="w-full text-center text-xs text-gray-400 hover:text-gray-600 pt-1 pb-0.5 transition-colors"
+                  className="w-full text-center text-sm text-gray-500 hover:text-gray-700 py-3 transition-colors min-h-[44px]"
+                  aria-label="Dismiss this popup"
                 >
                   No thanks, I'm fine
                 </button>

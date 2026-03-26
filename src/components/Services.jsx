@@ -69,7 +69,7 @@ export default function Services() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
             Towing Services in Mumbai
           </h2>
-          <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
             From emergency breakdowns to long-distance recovery — we handle it all, 24 hours a day.
           </p>
         </motion.div>
@@ -93,7 +93,7 @@ export default function Services() {
               <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-orange-500 transition-colors">
                 {service.title}
               </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">{service.desc}</p>
+              <p className="text-sm text-gray-600 leading-relaxed">{service.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -108,9 +108,10 @@ export default function Services() {
         >
           <a
             href={`tel:${PHONE}`}
-            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-base px-8 py-4 rounded-2xl transition-all duration-200 hover:scale-105 shadow-lg"
+            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-base px-8 py-4 min-h-[48px] rounded-2xl transition-all duration-200 hover:scale-105 shadow-lg"
+            aria-label="Book a towing service - Call Mumbai Towing 24/7"
           >
-            <Phone size={18} />
+            <Phone size={20} aria-hidden="true" />
             Book a Service — Call Now
           </a>
         </motion.div>

@@ -40,7 +40,7 @@ export default function ServiceAreas() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
             Towing Service Areas in Mumbai
           </h2>
-          <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
             We provide 24/7 car towing across all major Mumbai neighbourhoods — from South Mumbai to the suburbs.
             If your area isn't listed, <strong className="text-gray-700">call us — we likely cover it</strong>.
           </p>
@@ -65,7 +65,7 @@ export default function ServiceAreas() {
                   <p className="font-bold text-gray-900 text-sm group-hover:text-orange-600 transition-colors">
                     {area.name}
                   </p>
-                  <p className="text-xs text-gray-400 mt-0.5">{area.sub}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{area.sub}</p>
                 </div>
               </div>
             </motion.div>
@@ -83,7 +83,7 @@ export default function ServiceAreas() {
           <h3 className="text-lg font-bold text-gray-900 mb-3">
             Mumbai's Most Trusted Towing Service
           </h3>
-          <p className="text-sm text-gray-500 leading-relaxed">
+          <p className="text-sm text-gray-600 leading-relaxed">
             Mumbai Towing 24 provides <strong>emergency car towing in Mumbai</strong>, <strong>flatbed towing across Mumbai</strong>,
             and <strong>24/7 towing service in Thane and Navi Mumbai</strong>. Whether you're in Andheri, Bandra,
             Borivali, Dadar, or the Eastern/Western Suburbs — our tow trucks are always nearby and ready to help.
@@ -92,9 +92,10 @@ export default function ServiceAreas() {
 
           <a
             href={`tel:${PHONE}`}
-            className="inline-flex items-center gap-2 mt-6 bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm px-7 py-3.5 rounded-xl transition-all duration-200 hover:scale-105 shadow-md"
+            className="inline-flex items-center gap-2 mt-6 bg-orange-500 hover:bg-orange-600 text-white font-bold text-base px-8 py-4 min-h-[48px] rounded-xl transition-all duration-200 hover:scale-105 shadow-md"
+            aria-label="Check towing coverage in your area - Call Mumbai Towing 24/7"
           >
-            <Phone size={16} />
+            <Phone size={18} aria-hidden="true" />
             Check Coverage in Your Area
           </a>
         </motion.div>

@@ -79,7 +79,7 @@ export default function Pricing() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
             No Hidden Charges
           </h2>
-          <p className="mt-4 text-lg text-gray-500 max-w-xl mx-auto">
+          <p className="mt-4 text-lg text-gray-600 max-w-xl mx-auto">
             We believe in honest pricing. Know the cost before we start — always.
           </p>
         </motion.div>
@@ -132,20 +132,21 @@ export default function Pricing() {
                       size={16}
                       className={`flex-shrink-0 ${plan.highlight ? 'text-orange-200' : 'text-orange-500'}`}
                     />
-                    <span className={plan.highlight ? 'text-orange-50' : 'text-gray-600'}>{feat}</span>
+                    <span className={plan.highlight ? 'text-white' : 'text-gray-700'}>{feat}</span>
                   </li>
                 ))}
               </ul>
 
               <a
                 href={`tel:${PHONE}`}
-                className={`flex items-center justify-center gap-2 py-3.5 rounded-xl font-bold text-sm transition-all duration-200 hover:scale-105 ${
+                className={`flex items-center justify-center gap-2 py-4 min-h-[48px] rounded-xl font-bold text-base transition-all duration-200 hover:scale-105 ${
                   plan.highlight
                     ? 'bg-white text-orange-600 hover:bg-orange-50'
                     : 'bg-orange-500 text-white hover:bg-orange-600'
                 }`}
+                aria-label={`${plan.cta} for ${plan.name} plan`}
               >
-                <Phone size={16} />
+                <Phone size={18} aria-hidden="true" />
                 {plan.cta}
               </a>
             </motion.div>

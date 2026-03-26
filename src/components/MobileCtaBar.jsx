@@ -16,18 +16,20 @@ export default function MobileCtaBar() {
         <div className="flex gap-3 max-w-lg mx-auto">
           <a
             href={`tel:${PHONE}`}
-            className="flex-1 flex items-center justify-center gap-2 bg-orange-500 active:bg-orange-600 text-white font-bold text-sm py-3.5 rounded-xl transition-colors"
+            className="flex-1 flex items-center justify-center gap-2 bg-orange-500 active:bg-orange-600 text-white font-bold text-base py-4 min-h-[48px] rounded-xl transition-colors"
+            aria-label="Call Mumbai Towing 24/7 now"
           >
-            <Phone size={18} />
+            <Phone size={20} aria-hidden="true" />
             Call Now
           </a>
           <a
             href={WHATSAPP}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 flex items-center justify-center gap-2 bg-gray-900 active:bg-gray-800 text-white font-bold text-sm py-3.5 rounded-xl transition-colors"
+            className="flex-1 flex items-center justify-center gap-2 bg-gray-900 active:bg-gray-800 text-white font-bold text-base py-4 min-h-[48px] rounded-xl transition-colors"
+            aria-label="Contact Mumbai Towing 24/7 on WhatsApp"
           >
-            <MessageCircle size={18} />
+            <MessageCircle size={20} aria-hidden="true" />
             WhatsApp
           </a>
         </div>

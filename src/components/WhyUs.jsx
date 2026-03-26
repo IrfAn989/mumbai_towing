@@ -59,7 +59,7 @@ export default function WhyUs() {
               We Don't Just Tow. <br />
               <span className="text-orange-500">We Show Up.</span>
             </h2>
-            <p className="text-lg text-gray-500 leading-relaxed mb-8">
+            <p className="text-lg text-gray-600 leading-relaxed mb-8">
               When your car breaks down at 2 AM on a Mumbai highway, you need someone you can count on.
               We built this service to be exactly that — fast, honest, and always available.
             </p>
@@ -98,7 +98,7 @@ export default function WhyUs() {
                 <h3 className="text-sm font-bold text-gray-900 mb-1 group-hover:text-orange-600 transition-colors">
                   {point.title}
                 </h3>
-                <p className="text-xs text-gray-500 leading-relaxed">{point.desc}</p>
+                <p className="text-xs text-gray-600 leading-relaxed">{point.desc}</p>
               </motion.div>
             ))}
           </div>

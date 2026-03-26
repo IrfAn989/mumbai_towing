@@ -80,10 +80,11 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden p-2 text-gray-700 hover:text-orange-500 transition-colors"
-              aria-label="Toggle menu"
+              className="lg:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-700 hover:text-orange-500 transition-colors"
+              aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={menuOpen}
             >
-              {menuOpen ? <X size={24} /> : <Menu size={24} />}
+              {menuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -104,7 +105,7 @@ export default function Navbar() {
                     key={link.label}
                     href={link.href}
                     onClick={(e) => handleNav(e, link.href)}
-                    className="block py-3 px-2 text-sm font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors"
+                    className="block py-4 px-3 min-h-[48px] flex items-center text-base font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50 rounded-lg transition-colors"
                   >
                     {link.label}
                   </a>
@@ -112,9 +113,10 @@ export default function Navbar() {
                 <div className="pt-3 pb-1">
                   <a
                     href={`tel:${PHONE}`}
-                    className="flex items-center justify-center gap-2 w-full bg-orange-500 text-white text-sm font-semibold py-3 rounded-xl"
+                    className="flex items-center justify-center gap-2 w-full bg-orange-500 text-white text-base font-semibold py-4 min-h-[48px] rounded-xl"
+                    aria-label="Call Mumbai Towing 24/7"
                   >
-                    <Phone size={16} />
+                    <Phone size={18} aria-hidden="true" />
                     Call Now — {PHONE_DISPLAY}
                   </a>
                 </div>

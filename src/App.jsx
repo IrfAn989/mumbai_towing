@@ -1,16 +1,22 @@
+import { lazy, Suspense } from 'react'
 import Navbar from './components/Navbar'
 import HeroSlideshow from './components/HeroSlideshow'
 import TrustBar from './components/TrustBar'
-import Services from './components/Services'
-import WhyUs from './components/WhyUs'
-import HowItWorks from './components/HowItWorks'
-import Pricing from './components/Pricing'
-import Testimonials from './components/Testimonials'
-import ServiceAreas from './components/ServiceAreas'
-import FinalCTA from './components/FinalCTA'
-import Footer from './components/Footer'
-import MobileCtaBar from './components/MobileCtaBar'
-import PopupCTA from './components/PopupCTA'
+
+// Lazy load below-the-fold components for better performance
+const Services = lazy(() => import('./components/Services'))
+const WhyUs = lazy(() => import('./components/WhyUs'))
+const HowItWorks = lazy(() => import('./components/HowItWorks'))
+const Pricing = lazy(() => import('./components/Pricing'))
+const Testimonials = lazy(() => import('./components/Testimonials'))
+const ServiceAreas = lazy(() => import('./components/ServiceAreas'))
+const FinalCTA = lazy(() => import('./components/FinalCTA'))
+const Footer = lazy(() => import('./components/Footer'))
+const MobileCtaBar = lazy(() => import('./components/MobileCtaBar'))
+const PopupCTA = lazy(() => import('./components/PopupCTA'))
+
+// Minimal loading fallback
+const LoadingFallback = () => <div className="min-h-[200px]" aria-hidden="true" />
 
 function App() {
   return (
@@ -19,17 +25,21 @@ function App() {
       <main>
         <HeroSlideshow />
         <TrustBar />
-        <Services />
-        <WhyUs />
-        <HowItWorks />
-        <Pricing />
-        <Testimonials />
-        <ServiceAreas />
-        <FinalCTA />
+        <Suspense fallback={<LoadingFallback />}>
+          <Services />
+          <WhyUs />
+          <HowItWorks />
+          <Pricing />
+          <Testimonials />
+          <ServiceAreas />
+          <FinalCTA />
+        </Suspense>
       </main>
-      <Footer />
-      <MobileCtaBar />
-      <PopupCTA />
+      <Suspense fallback={null}>
+        <Footer />
+        <MobileCtaBar />
+        <PopupCTA />
+      </Suspense>
     </div>
   )
 }

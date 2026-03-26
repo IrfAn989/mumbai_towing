@@ -39,7 +39,7 @@ export default function FinalCTA() {
             <span className="text-orange-400">We're Just a Call Away.</span>
           </h2>
 
-          <p className="text-lg sm:text-xl text-slate-400 leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl mx-auto">
             Don't wait on the roadside. Our tow trucks are stationed across Mumbai
             and ready to reach you in under 30 minutes — any time, any day.
           </p>
@@ -49,9 +49,10 @@ export default function FinalCTA() {
               href={`tel:${PHONE}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center justify-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-5 rounded-2xl shadow-2xl shadow-orange-900/30 transition-colors"
+              className="flex items-center justify-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-5 min-h-[56px] rounded-2xl shadow-2xl shadow-orange-900/30 transition-colors"
+              aria-label="Call Mumbai Towing 24/7 now - Free"
             >
-              <Phone size={22} />
+              <Phone size={22} aria-hidden="true" />
               Call Now — Free
             </motion.a>
             <motion.a
@@ -60,14 +61,15 @@ export default function FinalCTA() {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
-              className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-lg px-10 py-5 rounded-2xl border-2 border-white/20 hover:border-white/40 transition-all"
+              className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white font-bold text-lg px-10 py-5 min-h-[56px] rounded-2xl border-2 border-white/20 hover:border-white/40 transition-all"
+              aria-label="Contact Mumbai Towing 24/7 on WhatsApp"
             >
-              <MessageCircle size={22} />
+              <MessageCircle size={22} aria-hidden="true" />
               WhatsApp Us
             </motion.a>
           </div>
 
-          <p className="mt-8 text-slate-500 text-sm">
+          <p className="mt-8 text-slate-400 text-sm">
             No booking fee &nbsp;·&nbsp; Free estimate &nbsp;·&nbsp; Arrives in ~30 minutes
           </p>
         </motion.div>

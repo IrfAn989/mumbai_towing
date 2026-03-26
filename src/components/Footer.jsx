@@ -41,7 +41,7 @@ export default function Footer() {
                 mumbaitowing<span className="text-orange-400">24</span>
               </span>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed mb-5">
+            <p className="text-sm text-gray-300 leading-relaxed mb-5">
               Mumbai's trusted 24/7 car towing service. Fast, affordable, and always available — anywhere in Mumbai.
             </p>
             <div className="space-y-3">
@@ -65,13 +65,13 @@ export default function Footer() {
                 </div>
                 WhatsApp Us
               </a>
-              <div className="flex items-center gap-3 text-sm text-gray-400">
+              <div className="flex items-center gap-3 text-sm text-gray-300">
                 <div className="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center">
                   <MapPin size={15} className="text-gray-400" />
                 </div>
                 Mumbai, Maharashtra, India
               </div>
-              <div className="flex items-center gap-3 text-sm text-gray-400">
+              <div className="flex items-center gap-3 text-sm text-gray-300">
                 <div className="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center">
                   <Clock size={15} className="text-gray-400" />
                 </div>
@@ -83,13 +83,13 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">Quick Links</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
                     onClick={(e) => handleNav(e, link.href)}
-                    className="text-sm text-gray-400 hover:text-orange-400 transition-colors"
+                    className="text-sm text-gray-300 hover:text-orange-400 transition-colors block py-2 min-h-[44px] flex items-center"
                   >
                     {link.label}
                   </a>
@@ -101,13 +101,13 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-5">Our Services</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-1">
               {services.map((s) => (
                 <li key={s}>
                   <a
                     href="#services"
                     onClick={(e) => handleNav(e, '#services')}
-                    className="text-sm text-gray-400 hover:text-orange-400 transition-colors"
+                    className="text-sm text-gray-300 hover:text-orange-400 transition-colors block py-2 min-h-[44px] flex items-center"
                   >
                     {s}
                   </a>

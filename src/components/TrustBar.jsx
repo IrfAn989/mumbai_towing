@@ -28,7 +28,7 @@ function StatCard({ icon: Icon, value, suffix, label, color, isFloat, started })
       <div className={`text-3xl lg:text-4xl font-extrabold ${color} tabular-nums`}>
         {display}{suffix}
       </div>
-      <div className="text-sm text-gray-500 font-medium mt-1">{label}</div>
+      <div className="text-sm text-gray-600 font-medium mt-1">{label}</div>
     </motion.div>
   );
 }

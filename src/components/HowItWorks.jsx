@@ -43,7 +43,7 @@ export default function HowItWorks() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
             How It Works
           </h2>
-          <p className="mt-4 text-lg text-gray-500 max-w-xl mx-auto">
+          <p className="mt-4 text-lg text-gray-600 max-w-xl mx-auto">
             Getting help is as easy as 3 steps. No complicated forms, no waiting on hold.
           </p>
         </motion.div>
@@ -72,7 +72,7 @@ export default function HowItWorks() {
                 </div>
 
                 <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed max-w-xs">{step.desc}</p>
+                <p className="text-sm text-gray-600 leading-relaxed max-w-xs">{step.desc}</p>
 
                 {/* Mobile connector arrow */}
                 {i < steps.length - 1 && (

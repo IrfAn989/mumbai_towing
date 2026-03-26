@@ -72,7 +72,7 @@ export default function Testimonials() {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
             Mumbai Drivers Love Us
           </h2>
-          <p className="mt-4 text-lg text-gray-500 max-w-xl mx-auto">
+          <p className="mt-4 text-lg text-gray-600 max-w-xl mx-auto">
             Real reviews from real Mumbaikars we've helped get back on the road.
           </p>
         </motion.div>
@@ -111,7 +111,7 @@ export default function Testimonials() {
                   </div>
                   <div>
                     <p className="font-bold text-gray-900">{reviews[current].name}</p>
-                    <p className="text-sm text-gray-400">
+                    <p className="text-sm text-gray-600">
                       {reviews[current].location} &nbsp;·&nbsp; {reviews[current].vehicle}
                     </p>
                   </div>
@@ -127,27 +127,28 @@ export default function Testimonials() {
                 <button
                   key={i}
                   onClick={() => { setDirection(i > current ? 1 : -1); setCurrent(i); }}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
-                    i === current ? 'bg-orange-500 w-6' : 'bg-gray-200 hover:bg-gray-300'
-                  }`}
-                />
+                  className={`min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full transition-all duration-200`}
+                  aria-label={`Go to review ${i + 1} by ${reviews[i].name}`}
+                >
+                  <span className={`h-2.5 rounded-full transition-all duration-200 ${i === current ? 'bg-orange-500 w-6' : 'bg-gray-300 w-2.5 hover:bg-gray-400'}`} />
+                </button>
               ))}
             </div>
 
             <div className="flex gap-3">
               <button
                 onClick={() => paginate(-1)}
-                className="w-10 h-10 bg-white border border-gray-200 hover:border-orange-400 rounded-full flex items-center justify-center text-gray-600 hover:text-orange-500 transition-all"
-                aria-label="Previous"
+                className="w-11 h-11 bg-white border border-gray-200 hover:border-orange-400 rounded-full flex items-center justify-center text-gray-700 hover:text-orange-500 transition-all"
+                aria-label="Go to previous review"
               >
-                <ChevronLeft size={20} />
+                <ChevronLeft size={20} aria-hidden="true" />
               </button>
               <button
                 onClick={() => paginate(1)}
-                className="w-10 h-10 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center text-white transition-all"
-                aria-label="Next"
+                className="w-11 h-11 bg-orange-500 hover:bg-orange-600 rounded-full flex items-center justify-center text-white transition-all"
+                aria-label="Go to next review"
               >
-                <ChevronRight size={20} />
+                <ChevronRight size={20} aria-hidden="true" />
               </button>
             </div>
           </div>
