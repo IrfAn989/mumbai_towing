@@ -7,7 +7,6 @@ import TrustBar from './components/TrustBar'
 const Services = lazy(() => import('./components/Services'))
 const WhyUs = lazy(() => import('./components/WhyUs'))
 const HowItWorks = lazy(() => import('./components/HowItWorks'))
-const Pricing = lazy(() => import('./components/Pricing'))
 const Testimonials = lazy(() => import('./components/Testimonials'))
 const ServiceAreas = lazy(() => import('./components/ServiceAreas'))
 const FinalCTA = lazy(() => import('./components/FinalCTA'))
@@ -29,7 +28,6 @@ function App() {
           <Services />
           <WhyUs />
           <HowItWorks />
-          <Pricing />
           <Testimonials />
           <ServiceAreas />
           <FinalCTA />

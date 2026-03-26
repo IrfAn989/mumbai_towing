@@ -1,37 +1,37 @@
 import { motion } from 'framer-motion';
-import { Zap, Layers, Bike, AlertTriangle, Navigation, Phone } from 'lucide-react';
+import { Zap, Layers, Wrench, AlertTriangle, Navigation, Phone } from 'lucide-react';
 
 const PHONE = '+919820207025';
 
 const services = [
   {
     icon: Zap,
-    title: 'Emergency Towing',
-    desc: 'Broke down on the highway or city road? We dispatch immediately and reach you in under 30 minutes.',
+    title: 'Emergency Car Towing',
+    desc: 'Car broke down on the highway or city road? We dispatch immediately and reach you in 20-30 minutes.',
     color: 'bg-red-50 text-red-600',
   },
   {
     icon: Layers,
-    title: 'Flatbed Towing',
-    desc: 'Safe, secure flatbed transport for luxury cars, SUVs, and low-clearance vehicles. Zero damage guarantee.',
+    title: 'Flatbed Car Towing',
+    desc: 'Safe, secure flatbed transport for luxury cars, SUVs, sedans, and low-clearance vehicles. Zero damage guarantee.',
     color: 'bg-blue-50 text-blue-600',
   },
   {
-    icon: Bike,
-    title: 'Bike Towing',
-    desc: 'Two-wheeler breakdown? We handle motorcycles and scooters with specialized bike carriers.',
+    icon: Wrench,
+    title: 'Roadside Assistance',
+    desc: 'Battery jump-start, tire change, fuel delivery, lockout service — quick roadside help when you need it.',
     color: 'bg-purple-50 text-purple-600',
   },
   {
     icon: AlertTriangle,
-    title: 'Accident Recovery',
-    desc: 'Post-accident vehicle recovery done swiftly with utmost care, working with insurance documentation.',
+    title: 'Accident Car Recovery',
+    desc: 'Post-accident car recovery done swiftly with utmost care, working with insurance documentation.',
     color: 'bg-orange-50 text-orange-600',
   },
   {
     icon: Navigation,
-    title: 'Outstation Towing',
-    desc: 'Need your vehicle moved to another city? We offer reliable long-distance towing across Maharashtra.',
+    title: 'Outstation Car Towing',
+    desc: 'Need your car moved to another city? We offer reliable long-distance car towing across Maharashtra.',
     color: 'bg-teal-50 text-teal-600',
   },
   {
@@ -67,10 +67,10 @@ export default function Services() {
             What We Do
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
-            Towing Services in Mumbai
+            Car Towing Services in Mumbai
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            From emergency breakdowns to long-distance recovery — we handle it all, 24 hours a day.
+            From emergency car breakdowns to long-distance recovery — we handle all car towing needs, 24 hours a day.
           </p>
         </motion.div>
 

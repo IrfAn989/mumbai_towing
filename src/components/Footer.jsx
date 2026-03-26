@@ -7,17 +7,17 @@ const WHATSAPP = 'https://wa.me/919820207025?text=Hi%2C%20I%20need%20towing%20se
 const quickLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Services', href: '#services' },
-  { label: 'Pricing', href: '#pricing' },
   { label: 'Why Choose Us', href: '#why-us' },
+  { label: 'Testimonials', href: '#testimonials' },
   { label: 'Service Areas', href: '#contact' },
 ];
 
 const services = [
-  'Emergency Towing',
-  'Flatbed Towing',
-  'Bike Towing',
+  'Emergency Car Towing',
+  'Flatbed Car Towing',
+  'Roadside Assistance',
   'Accident Recovery',
-  'Outstation Towing',
+  'Outstation Car Towing',
 ];
 
 const handleNav = (e, href) => {
