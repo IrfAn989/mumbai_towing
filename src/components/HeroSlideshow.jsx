@@ -14,9 +14,9 @@ const INTERVAL = 5500;
 const slides = [
   {
     id: 0,
-    badge: 'Available Right Now — Mumbai Wide',
-    headline: ['24/7 Emergency', 'Towing in Mumbai'],
-    sub: 'Car breakdown? We reach you in 20–30 minutes anywhere in Mumbai — day or night.',
+    badge: 'Car Towing Near Me — Available Now',
+    headline: ['24 Hour Towing', 'Service in Mumbai'],
+    sub: 'Looking for car towing near me? Emergency towing Mumbai with 20–30 min response. Your trusted tow truck near me for any car breakdown service.',
     theme: 'dark',
     bg: '#0F172A',
     accentClass: 'text-orange-400',
@@ -36,9 +36,9 @@ const slides = [
   },
   {
     id: 2,
-    badge: 'Mumbai\'s Fastest Response',
+    badge: 'Towing Service Near Me — Fast Response',
     headline: ['20–30 Min Response.', 'Every Time.'],
-    sub: 'Our tow trucks are stationed across Mumbai\'s key zones. We reach you in 20–30 minutes, all day, every day.',
+    sub: 'Need a towing service near me? Our tow truck near me fleet covers all Mumbai. Roadside assistance Mumbai available 24 hours for any emergency.',
     theme: 'orange',
     bg: '#EA580C',
     accentClass: 'text-white/90',

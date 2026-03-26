@@ -34,14 +34,13 @@ export default function FinalCTA() {
           </div>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
-            Stuck on the Road?
+            Need Car Towing Near Me?
             <br />
-            <span className="text-orange-400">We're Just a Call Away.</span>
+            <span className="text-orange-400">24 Hour Towing Mumbai</span>
           </h2>
 
           <p className="text-lg sm:text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl mx-auto">
-            Don't wait on the roadside. Our tow trucks are stationed across Mumbai
-            and ready to reach you in under 30 minutes — any time, any day.
+            Searching for towing service near me? Get emergency towing Mumbai and car breakdown service near me with our tow truck near me fleet. Roadside assistance Mumbai available 24/7.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

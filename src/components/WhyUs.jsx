@@ -56,12 +56,11 @@ export default function WhyUs() {
               Why Mumbai Trusts Us
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6">
-              We Don't Just Tow. <br />
-              <span className="text-orange-500">We Show Up.</span>
+              Best Towing Service Near Me <br />
+              <span className="text-orange-500">in Mumbai</span>
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed mb-8">
-              When your car breaks down at 2 AM on a Mumbai highway, you need someone you can count on.
-              We built this service to be exactly that — fast, honest, and always available.
+              Need car towing near me? When you search for tow truck near me or car breakdown service near me, we're the 24 hour towing Mumbai service that shows up fast with roadside assistance Mumbai.
             </p>
 
             {/* Visual stat card */}

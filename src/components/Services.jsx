@@ -6,8 +6,8 @@ const PHONE = '+919820207025';
 const services = [
   {
     icon: Zap,
-    title: 'Emergency Car Towing',
-    desc: 'Car broke down on the highway or city road? We dispatch immediately and reach you in 20-30 minutes.',
+    title: 'Emergency Towing Mumbai',
+    desc: 'Need emergency towing Mumbai? Car breakdown service near me available 24/7. We dispatch immediately and reach you in 20-30 minutes.',
     color: 'bg-red-50 text-red-600',
   },
   {
@@ -18,8 +18,8 @@ const services = [
   },
   {
     icon: Wrench,
-    title: 'Roadside Assistance',
-    desc: 'Battery jump-start, tire change, fuel delivery, lockout service — quick roadside help when you need it.',
+    title: 'Roadside Assistance Mumbai',
+    desc: 'Roadside assistance Mumbai for battery jump-start, tire change, fuel delivery, lockout service. Your reliable tow truck near me for quick help.',
     color: 'bg-purple-50 text-purple-600',
   },
   {
@@ -67,10 +67,10 @@ export default function Services() {
             What We Do
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 tracking-tight">
-            Car Towing Services in Mumbai
+            Car Towing Near Me — Mumbai's #1 Service
           </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-            From emergency car breakdowns to long-distance recovery — we handle all car towing needs, 24 hours a day.
+            Looking for towing service near me? We provide 24 hour towing Mumbai, emergency towing Mumbai, and car breakdown service near me across all areas.
           </p>
         </motion.div>
 
