@@ -108,6 +108,7 @@ export default function Services() {
         >
           <a
             href={`tel:${PHONE}`}
+            onClick={() => window.gtag_report_conversion && window.gtag_report_conversion(`tel:${PHONE}`)}
             className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold text-base px-8 py-4 min-h-[48px] rounded-2xl transition-all duration-200 hover:scale-105 shadow-lg"
             aria-label="Book a towing service - Call Mumbai Towing 24/7"
           >

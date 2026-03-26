@@ -10,6 +10,7 @@ export default function MobileCtaBar() {
         <div className="flex gap-3 max-w-lg mx-auto">
           <a
             href={`tel:${PHONE}`}
+            onClick={() => window.gtag_report_conversion && window.gtag_report_conversion(`tel:${PHONE}`)}
             className="flex-1 flex items-center justify-center gap-2 bg-orange-500 active:bg-orange-600 text-white font-bold text-base py-4 min-h-[48px] rounded-xl transition-colors"
             aria-label="Call Mumbai Towing 24/7 now"
           >

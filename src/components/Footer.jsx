@@ -47,6 +47,7 @@ export default function Footer() {
             <div className="space-y-3">
               <a
                 href={`tel:${PHONE}`}
+                onClick={() => window.gtag_report_conversion && window.gtag_report_conversion(`tel:${PHONE}`)}
                 className="flex items-center gap-3 text-sm hover:text-orange-400 transition-colors group"
               >
                 <div className="w-8 h-8 bg-orange-500/20 rounded-lg flex items-center justify-center group-hover:bg-orange-500/40 transition-colors">
@@ -125,6 +126,7 @@ export default function Footer() {
               </p>
               <a
                 href={`tel:${PHONE}`}
+                onClick={() => window.gtag_report_conversion && window.gtag_report_conversion(`tel:${PHONE}`)}
                 className="flex items-center justify-center gap-2 w-full bg-white text-orange-600 font-bold text-sm py-3 rounded-xl hover:bg-orange-50 transition-colors"
               >
                 <Phone size={15} />

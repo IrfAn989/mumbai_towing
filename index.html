@@ -15,6 +15,24 @@
       gtag('config', 'AW-18043490024');
     </script>
     
+    <!-- Event snippet for Page view conversion page -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-18043490024/6aj0CPLviJAcEOid55tD',
+            'value': 1.0,
+            'currency': 'INR',
+            'event_callback': callback
+        });
+        return false;
+      }
+    </script>
+    
     <!-- Critical inline CSS - no external fonts, no render blocking -->
     <style>
       *,::after,::before{box-sizing:border-box}

@@ -46,6 +46,7 @@ export default function FinalCTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a
               href={`tel:${PHONE}`}
+              onClick={() => window.gtag_report_conversion && window.gtag_report_conversion(`tel:${PHONE}`)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               className="flex items-center justify-center gap-3 bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-10 py-5 min-h-[56px] rounded-2xl shadow-2xl shadow-orange-900/30 transition-colors"

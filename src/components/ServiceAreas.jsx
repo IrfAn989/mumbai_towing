@@ -92,6 +92,7 @@ export default function ServiceAreas() {
 
           <a
             href={`tel:${PHONE}`}
+            onClick={() => window.gtag_report_conversion && window.gtag_report_conversion(`tel:${PHONE}`)}
             className="inline-flex items-center gap-2 mt-6 bg-orange-500 hover:bg-orange-600 text-white font-bold text-base px-8 py-4 min-h-[48px] rounded-xl transition-all duration-200 hover:scale-105 shadow-md"
             aria-label="Check towing coverage in your area - Call Mumbai Towing 24/7"
           >

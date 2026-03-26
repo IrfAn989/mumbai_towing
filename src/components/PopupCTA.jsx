@@ -72,6 +72,7 @@ export default function PopupCTA() {
                 {/* Call CTA */}
                 <a
                   href={`tel:${PHONE}`}
+                  onClick={() => window.gtag_report_conversion && window.gtag_report_conversion(`tel:${PHONE}`)}
                   className="flex items-center justify-between w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-5 rounded-2xl transition-colors shadow-lg shadow-orange-200"
                   aria-label="Call Mumbai Towing 24/7"
                 >

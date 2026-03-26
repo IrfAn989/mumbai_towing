@@ -137,6 +137,7 @@ export default function HeroSlideshow() {
             <div className="flex flex-col sm:flex-row gap-3 pt-2">
               <a
                 href={`tel:${PHONE}`}
+                onClick={() => window.gtag_report_conversion && window.gtag_report_conversion(`tel:${PHONE}`)}
                 className={`flex items-center justify-center gap-2.5 font-bold text-base px-8 py-4 min-h-[56px] rounded-2xl transition-all duration-200 shadow-lg ${
                   isOrange
                     ? 'bg-white text-orange-600 hover:bg-orange-50 shadow-black/20'

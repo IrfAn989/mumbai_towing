@@ -66,6 +66,7 @@ export default function Navbar() {
             <div className="hidden lg:flex items-center gap-3">
               <a
                 href={`tel:${PHONE}`}
+                onClick={() => window.gtag_report_conversion && window.gtag_report_conversion(`tel:${PHONE}`)}
                 className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 hover:scale-105 shadow-sm hover:shadow-md"
               >
                 <Phone size={15} />
@@ -102,6 +103,7 @@ export default function Navbar() {
                 <div className="pt-3 pb-1">
                   <a
                     href={`tel:${PHONE}`}
+                    onClick={() => window.gtag_report_conversion && window.gtag_report_conversion(`tel:${PHONE}`)}
                     className="flex items-center justify-center gap-2 w-full bg-orange-500 text-white text-base font-semibold py-4 min-h-[48px] rounded-xl"
                     aria-label="Call Mumbai Towing 24/7"
                   >
